@@ -1,0 +1,31 @@
+# Import library
+import numpy as np
+import pandas as pd
+
+# Input data
+data = pd.read_csv('coords.csv')
+
+# Locate missing data
+# "True" indicate any missing data
+data.isnull()
+#print(data.isnull())
+
+data.isnull().sum()
+#print(data.isnull().sum())
+# All data are available
+# no need to input or drop data
+
+# Check for duplicate data
+# "True" indicating duplicate values
+data.duplicated()
+#print(data.duplicated())
+
+# Detect outliers
+data['class'].describe()
+#print(data['class'].describe())
+
+# Normalise Casing
+# COnvert all data to lower case
+#data['class'] = data['class'].str.lower()
+
+#print(data)
