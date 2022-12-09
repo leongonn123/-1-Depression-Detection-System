@@ -78,6 +78,13 @@ with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=
             row.insert(0, class_name)
 
             # Export to CSV
+            
+            # Run this first
+            with open(R'C:/Users/Admin/PycharmProjects/Mental-illness-detection-system/coords.csv', mode='a', newline='') as f:
+                csv_writer = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+                csv_writer.writerow(landmarks)
+            
+            #followed by this
             with open(r'C:/Users/Admin/PycharmProjects/Mental-illness-detection-system/coords.csv', mode='a', newline='') as f:
                 csv_writer = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                 csv_writer.writerow(row)
